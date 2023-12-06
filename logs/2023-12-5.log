@@ -1,0 +1,323 @@
+
+
+ Tue Dec 05 2023 16:29:58 GMT+0100 (Central European Standard Time) 
+
+
+ Tue Dec 05 2023 16:59:58 GMT+0100 (Central European Standard Time) 
+fdusd =0 , bitcoin = 0.005 ; 
+Borrowed 0 fdusd, position is OUT.
+price is above ma, placing order...
+{
+  "symbol": "BTCFDUSD",
+  "orderId": 1532549041,
+  "clientOrderId": "W9SVIdkfg22EOEafEuqQnw",
+  "transactTime": 1701791999698,
+  "price": "0",
+  "origQty": "0.0005",
+  "executedQty": "0.0005",
+  "cummulativeQuoteQty": "21.145",
+  "status": "FILLED",
+  "timeInForce": "GTC",
+  "type": "MARKET",
+  "side": "BUY",
+  "fills": [
+    {
+      "price": "42290",
+      "qty": "0.0005",
+      "commission": "0",
+      "commissionAsset": "BNB",
+      "tradeId": 137866970
+    }
+  ],
+  "isIsolated": false,
+  "selfTradePreventionMode": "EXPIRE_MAKER"
+}placed stop loss
+{
+  "code": -2010,
+  "msg": "Account has insufficient balance for requested action."
+}
+
+ Tue Dec 05 2023 17:15:58 GMT+0100 (Central European Standard Time) 
+fdusd =0 , bitcoin = 0.004 ; 
+Borrowed 0 fdusd, position is OUT.
+price is above ma, placing order...
+{
+  "symbol": "BTCFDUSD",
+  "orderId": 1532931025,
+  "clientOrderId": "XzdGXVYAzI5HSWUsYJtGlD",
+  "transactTime": 1701792959953,
+  "price": "0",
+  "origQty": "0.004",
+  "executedQty": "0.004",
+  "cummulativeQuoteQty": "169.51068",
+  "status": "FILLED",
+  "timeInForce": "GTC",
+  "type": "MARKET",
+  "side": "BUY",
+  "fills": [
+    {
+      "price": "42377.67",
+      "qty": "0.004",
+      "commission": "0",
+      "commissionAsset": "BNB",
+      "tradeId": 137927643
+    }
+  ],
+  "marginBuyBorrowAsset": "FDUSD",
+  "marginBuyBorrowAmount": "75.68520991",
+  "isIsolated": false,
+  "selfTradePreventionMode": "EXPIRE_MAKER"
+}placed stop loss
+{
+  "symbol": "BTCFDUSD",
+  "orderId": 1532931289,
+  "clientOrderId": "ShctMphJk2ZcFZfpkwqiI5",
+  "transactTime": 1701792960213,
+  "isIsolated": false
+}
+
+ Tue Dec 05 2023 17:20:58 GMT+0100 (Central European Standard Time) 
+fdusd =75.68 , bitcoin = 0.004 ; 
+cancelling SL
+{
+  "code": -2011,
+  "msg": "Unknown order sent."
+}
+this stop loss should never be called 
+{
+  "code": -2010,
+  "msg": "Account has insufficient balance for requested action."
+}
+
+
+ Tue Dec 05 2023 17:25:58 GMT+0100 (Central European Standard Time) 
+fdusd =75.68 , bitcoin = 0.004 ; 
+cancelling SL
+{
+  "code": -2011,
+  "msg": "Unknown order sent."
+}
+this stop loss should never be called 
+{
+  "code": -2010,
+  "msg": "Account has insufficient balance for requested action."
+}
+
+
+ Tue Dec 05 2023 18:00:58 GMT+0100 (Central European Standard Time) 
+fdusd =75.68 , bitcoin = 0.004 ; 
+cancelling SL
+{
+  "code": -2011,
+  "msg": "Unknown order sent."
+}
+this stop loss should never be called 
+{
+  "code": -2010,
+  "msg": "Account has insufficient balance for requested action."
+}
+
+
+ Tue Dec 05 2023 21:25:58 GMT+0100 (Central European Standard Time) 
+
+
+ Tue Dec 05 2023 21:30:58 GMT+0100 (Central European Standard Time) 
+fdusd =170.2 , bitcoin = 0.004 ; 
+Borrowed 170.2 fdusd, position is OUT.
+price is above ma, placing order...
+
+
+ Tue Dec 05 2023 21:35:58 GMT+0100 (Central European Standard Time) 
+fdusd =0.04 , bitcoin = 0.004 ; 
+cancelling SL
+{
+  "code": -2011,
+  "msg": "Unknown order sent."
+}
+this stop loss should never be called 
+{
+  "symbol": "BTCFDUSD",
+  "orderId": 1541329309,
+  "clientOrderId": "DCjN03HBfnpAiUST59CuQo",
+  "transactTime": 1701808560296,
+  "isIsolated": false
+}
+
+
+ Tue Dec 05 2023 21:40:59 GMT+0100 (Central European Standard Time) 
+fdusd =174.57 , bitcoin = 0.004 ; 
+Borrowed 174.57 fdusd, position is OUT.
+price is above ma, placing order...
+{
+  "symbol": "BTCFDUSD",
+  "orderId": 1541387527,
+  "clientOrderId": "dykUQVIG60Ynx1RCc3plUh",
+  "transactTime": 1701808860508,
+  "price": "0",
+  "origQty": "0.004",
+  "executedQty": "0.004",
+  "cummulativeQuoteQty": "174.49588",
+  "status": "FILLED",
+  "timeInForce": "GTC",
+  "type": "MARKET",
+  "side": "BUY",
+  "fills": [
+    {
+      "price": "43623.97",
+      "qty": "0.004",
+      "commission": "0",
+      "commissionAsset": "BNB",
+      "tradeId": 138958293
+    }
+  ],
+  "isIsolated": false,
+  "selfTradePreventionMode": "EXPIRE_MAKER"
+}placed stop loss
+{
+  "symbol": "BTCFDUSD",
+  "orderId": 1541387546,
+  "clientOrderId": "BsFzCMsYRt7mQzlFPUEGUJ",
+  "transactTime": 1701808860780,
+  "isIsolated": false
+}
+
+ Tue Dec 05 2023 21:50:00 GMT+0100 (Central European Standard Time) 
+fdusd =174.53 , bitcoin = 0.004 ; 
+Borrowed 174.53 fdusd, position is OUT.
+price is above ma, placing order...
+{
+  "code": -2010,
+  "msg": "Account has insufficient balance for requested action."
+}placed stop loss
+{
+  "code": -1102,
+  "msg": "Mandatory parameter 'price|quantity|stopPrice' was not sent, was empty/null, or malformed."
+}
+
+ Tue Dec 05 2023 22:00:00 GMT+0100 (Central European Standard Time) 
+fdusd =174.53 , bitcoin = 0.004 ; 
+Borrowed 174.53 fdusd, position is OUT.
+price is above ma, placing order...
+{
+  "symbol": "BTCFDUSD",
+  "orderId": 1541608340,
+  "clientOrderId": "uAoFVjfYY5CAGfLggzfarf",
+  "transactTime": 1701810002737,
+  "price": "0",
+  "origQty": "0.004",
+  "executedQty": "0.004",
+  "cummulativeQuoteQty": "175.24852",
+  "status": "FILLED",
+  "timeInForce": "GTC",
+  "type": "MARKET",
+  "side": "BUY",
+  "fills": [
+    {
+      "price": "43812.13",
+      "qty": "0.004",
+      "commission": "0",
+      "commissionAsset": "BNB",
+      "tradeId": 138994015
+    }
+  ],
+  "marginBuyBorrowAsset": "FDUSD",
+  "marginBuyBorrowAmount": "0.72183668",
+  "isIsolated": false,
+  "selfTradePreventionMode": "EXPIRE_MAKER"
+}placed stop loss
+{
+  "symbol": "BTCFDUSD",
+  "orderId": 1541608354,
+  "clientOrderId": "XFFoGCO8yZwKoiz424yPoG",
+  "transactTime": 1701810002997,
+  "isIsolated": false
+}
+
+ Tue Dec 05 2023 22:05:00 GMT+0100 (Central European Standard Time) 
+fdusd =175.2 , bitcoin = 0.004 ; 
+Borrowed 175.2 fdusd, position is OUT.
+price is above ma, placing order...
+{
+  "symbol": "BTCFDUSD",
+  "orderId": 1541667534,
+  "clientOrderId": "UYaJbJtHi61jUIFKb6g42q",
+  "transactTime": 1701810302371,
+  "price": "0",
+  "origQty": "0.004",
+  "executedQty": "0.004",
+  "cummulativeQuoteQty": "175.19004",
+  "status": "FILLED",
+  "timeInForce": "GTC",
+  "type": "MARKET",
+  "side": "BUY",
+  "fills": [
+    {
+      "price": "43797.51",
+      "qty": "0.004",
+      "commission": "0",
+      "commissionAsset": "BNB",
+      "tradeId": 139003863
+    }
+  ],
+  "isIsolated": false,
+  "selfTradePreventionMode": "EXPIRE_MAKER"
+}placed stop loss
+{
+  "symbol": "BTCFDUSD",
+  "orderId": 1541667541,
+  "clientOrderId": "7I6aHMmYum1yayGh9ivt1z",
+  "transactTime": 1701810302624,
+  "isIsolated": false
+}
+
+ Tue Dec 05 2023 22:10:00 GMT+0100 (Central European Standard Time) 
+fdusd =175.14 , bitcoin = 0.004 ; 
+Borrowed 175.14 fdusd, position is OUT.
+price is above ma, placing order...
+{
+  "symbol": "BTCFDUSD",
+  "orderId": 1541714656,
+  "clientOrderId": "5L3fJXYaPeki4PRstUqzxh",
+  "transactTime": 1701810602728,
+  "price": "0",
+  "origQty": "0.004",
+  "executedQty": "0.004",
+  "cummulativeQuoteQty": "175.3096",
+  "status": "FILLED",
+  "timeInForce": "GTC",
+  "type": "MARKET",
+  "side": "BUY",
+  "fills": [
+    {
+      "price": "43827.4",
+      "qty": "0.004",
+      "commission": "0",
+      "commissionAsset": "BNB",
+      "tradeId": 139011003
+    }
+  ],
+  "marginBuyBorrowAsset": "FDUSD",
+  "marginBuyBorrowAmount": "0.17143044",
+  "isIsolated": false,
+  "selfTradePreventionMode": "EXPIRE_MAKER"
+}placed stop loss
+{
+  "symbol": "BTCFDUSD",
+  "orderId": 1541714769,
+  "clientOrderId": "yVn5grRwOo6LMoOdLNKDFw",
+  "transactTime": 1701810603352,
+  "isIsolated": false
+}
+
+ Tue Dec 05 2023 22:15:00 GMT+0100 (Central European Standard Time) 
+fdusd =175.26 , bitcoin = 0.004 ; 
+Borrowed 175.26 fdusd, position is OUT.
+price is above ma, placing order...
+{
+  "code": -2010,
+  "msg": "Account has insufficient balance for requested action."
+}placed stop loss
+{
+  "code": -1102,
+  "msg": "Mandatory parameter 'price|quantity|stopPrice' was not sent, was empty/null, or malformed."
+}

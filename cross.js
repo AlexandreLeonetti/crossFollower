@@ -63,7 +63,53 @@ async function cancelCrossOrders(symbol, apiKey, apiSecret){
                             throw error ;
                         }
 }
+
 /* create a stopSell */
+async function stopSell(symbol,  action, quantity, stopPrice, price, apiKey, apiSecret){
+        try{
+                    const endpoint = "https://api.binance.com/sapi/v1/margin/order";
+                    const timestamp= Date.now();
+                    const params ={
+                                    symbol,
+                                    isIsolated: "FALSE",
+                                    side : "SELL", //SELL
+                                    type : "STOP_LOSS_LIMIT",
+                                    quantity,
+                                    stopPrice,
+                                    price,
+                                    timeInForce : "GTC",
+                                    timestamp
+                                };
+                    console.log(params);
+
+                    let queryString = Object.keys(params).map(key=> `${key}=${encodeURIComponent(params[key])}`).join("&");
+
+                    const signature = crypto.createHmac("sha256", apiSecret)
+                    .update(queryString)
+                    .digest("hex");
+
+                    queryString+="&signature="+signature;
+
+                    const url = endpoint + "?" + queryString;
+                    const request = await  fetch(url, {
+                                    method:"POST",
+                                    headers:{
+                                                        "X-MBX-APIKEY": apiKey,
+                                                        "Content-Type": "application/x-www-form-urlencoded"
+                                                    }
+                                })
+
+                    const response = await request.json();
+                    console.log("response from stop loss order");
+                    console.log(response);
+                    return response;
+                }catch(error){
+                            console.log("Error", error)
+                            throw error;
+                }
+}
+
+
 async function stopBuy (symbol,  action, quantity, stopPrice, price, apiKey, apiSecret){
         try{
                     const endpoint = "https://api.binance.com/sapi/v1/margin/order";
@@ -107,8 +153,49 @@ async function stopBuy (symbol,  action, quantity, stopPrice, price, apiKey, api
                             throw error;
                 }
 }
+/* change getBtcDebt into getFdusdDebt */
+async function getCrossUsdDebt(symbol, apiKey, apiSecret){
+    try{
+        const timestamp = Date.now();
+        const endpoint  = "https://api.binance.com/sapi/v1/margin/account";
+        const params = {
+                            timestamp : timestamp
+                        };
+        let queryString = Object.keys(params).map(key => `${key}=${encodeURIComponent(params[key])}`).join("&");
+        
+        const signature =  crypto.createHmac("sha256", apiSecret)
+        .update(queryString)
+        .digest("hex");
 
-async function getCrossDebt(symbol, apiKey, apiSecret){
+        queryString+="&signature="+signature;
+        
+        const url = endpoint + "?" + queryString;
+
+        const request = await fetch(url, {
+                            method:"GET",
+                            headers:{
+                                "X-MBX-APIKEY" : apiKey,
+                                "Content-Type" : "application/x-www-form-urlencoded"
+                            }
+        });
+
+        const response = await request.json();
+        //console.log(response);
+        const respArr= response.userAssets;
+        const usdInfo = respArr.find((e) => e.asset === "FDUSD");
+        const usdBorrowed = formatter(usdInfo.borrowed, 1, 2);
+        const usdFree     = formatter(usdInfo.free,1,2);
+        //console.log(usdBorrowed, typeof usdBorrowed);
+        
+        //userAssets is a large array.
+        //element.asset === "BTC"
+        //return response.assets[0].baseAsset.borrowed;
+        return {borrowed : usdBorrowed, free : usdFree}; 
+    }catch(err){
+        console.log(err);
+    }
+}
+async function getCrossBtcDebt(symbol, apiKey, apiSecret){
     try{
         const timestamp = Date.now();
         const endpoint  = "https://api.binance.com/sapi/v1/margin/account";
@@ -148,6 +235,99 @@ async function getCrossDebt(symbol, apiKey, apiSecret){
     }
 }
 /* crossBuy */
+
+
+async function crossBuy(symbol, quantity, apiKey, apiSecret){
+    try{
+         const timestamp= Date.now();
+       const endpoint = "https://api.binance.com/sapi/v1/margin/order";
+             const params ={
+                                    symbol,
+                                    isIsolated : "FALSE",
+                                    side : "BUY",
+                                    type : "MARKET",/*MARKET*/
+                                    /*quoteOrderQty,*/
+                                    quantity: quantity,
+                                    /*price : 40000,*/
+                                    newOrderRespType:"FULL",
+                                    sideEffectType : "AUTO_BORROW_REPAY",
+                                    /*timeInForce : "GTC", *//* mandatory for limit orders */
+                                    timestamp
+                            };
+            console.log(params);
+
+             let queryString = Object.keys(params).map(key=> `${key}=${encodeURIComponent(params[key])}`).join("&");
+
+                    const signature = crypto.createHmac("sha256", apiSecret)
+                    .update(queryString)
+                    .digest("hex");
+
+                    queryString+="&signature="+signature;
+
+                    const url = endpoint + "?" + queryString;
+                    const request = await  fetch(url, {
+                                    method:"POST",
+                                    headers:{
+                                                        "X-MBX-APIKEY": apiKey,
+                                                        "Content-Type": "application/x-www-form-urlencoded"
+                                                    }
+                                })
+
+                    const response = await request.json();
+                    return response;
+
+    }catch(error){
+             console.log("Error", error)
+             throw error;
+    }
+}
+
+async function crossBuyNormal(symbol, quantity, apiKey, apiSecret){
+    try{
+         const timestamp= Date.now();
+       const endpoint = "https://api.binance.com/sapi/v1/margin/order";
+             const params ={
+                                    symbol,
+                                    isIsolated : "FALSE",
+                                    side : "BUY",
+                                    type : "MARKET",/*MARKET*/
+                                    /*quoteOrderQty,*/
+                                    quantity: quantity,
+                                    /*price : 40000,*/
+                                    newOrderRespType:"FULL",
+                                    sideEffectType : "NO_SIDE_EFFECT",
+                                    /*timeInForce : "GTC", *//* mandatory for limit orders */
+                                    timestamp
+                            };
+            console.log(params);
+
+             let queryString = Object.keys(params).map(key=> `${key}=${encodeURIComponent(params[key])}`).join("&");
+
+                    const signature = crypto.createHmac("sha256", apiSecret)
+                    .update(queryString)
+                    .digest("hex");
+
+                    queryString+="&signature="+signature;
+
+                    const url = endpoint + "?" + queryString;
+                    const request = await  fetch(url, {
+                                    method:"POST",
+                                    headers:{
+                                                        "X-MBX-APIKEY": apiKey,
+                                                        "Content-Type": "application/x-www-form-urlencoded"
+                                                    }
+                                })
+
+                    const response = await request.json();
+                    return response;
+
+    }catch(error){
+             console.log("Error", error)
+             throw error;
+    }
+}
+
+
 async function sellShortCross(symbol, quantity, apiKey, apiSecret){
     try{
          const timestamp= Date.now();
@@ -200,6 +380,10 @@ async function sellShortCross(symbol, quantity, apiKey, apiSecret){
 module.exports.getTickerPrice   = getTickerPrice; // OK  no need to replace.
 module.exports.formatter        = formatter; // ok
 module.exports.sellShortCross   = sellShortCross; //OKto be tested change it to cross 3x
-module.exports.getCrossDebt     = getCrossDebt; //OK  
+module.exports.getCrossBtcDebt     = getCrossBtcDebt; //OK  
 module.exports.stopBuy          = stopBuy; // OK 
 module.exports.cancelCrossOrders= cancelCrossOrders;// OK !.
+module.exports.crossBuy         = crossBuy;
+module.exports.crossBuyNormal   = crossBuyNormal;
+module.exports.stopSell         = stopSell;
+module.exports.getCrossUsdDebt  = getCrossUsdDebt;

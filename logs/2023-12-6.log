@@ -1,0 +1,224 @@
+
+
+ Wed Dec 06 2023 11:10:00 GMT+0100 (Central European Standard Time) 
+fdusd =175.26 , bitcoin = 0.004 ; 
+Available 175.26 fdusd,borrowed NaN,  position is OUT.
+price is under ma, not buying.
+
+
+ Wed Dec 06 2023 11:25:00 GMT+0100 (Central European Standard Time) 
+fdusd =175.26 , bitcoin = 0.004 ; 
+Available 175.26 fdusd,borrowed NaN,  position is OUT.
+price is under ma, not buying.
+
+
+ Wed Dec 06 2023 11:30:00 GMT+0100 (Central European Standard Time) 
+fdusd =175.26 , bitcoin = 0.004 ; 
+Available 175.26 fdusd,borrowed NaN,  position is OUT.
+price is under ma, not buying.
+
+
+ Wed Dec 06 2023 11:35:00 GMT+0100 (Central European Standard Time) 
+fdusd =175.26 , bitcoin = 0.004 ; 
+Available 175.26 fdusd,borrowed NaN,  position is OUT.
+price is above ma, placing order...
+calculating 175.26*0.99/44259.86...{
+  "symbol": "BTCFDUSD",
+  "orderId": 1554315087,
+  "clientOrderId": "0OwSvOBcpIHqj22nBtaOI4",
+  "transactTime": 1701858902078,
+  "price": "0",
+  "origQty": "0.00392",
+  "executedQty": "0.00392",
+  "cummulativeQuoteQty": "173.5051192",
+  "status": "FILLED",
+  "timeInForce": "GTC",
+  "type": "MARKET",
+  "side": "BUY",
+  "fills": [
+    {
+      "price": "44261.51",
+      "qty": "0.00269",
+      "commission": "0",
+      "commissionAsset": "BNB",
+      "tradeId": 141011695
+    },
+    {
+      "price": "44261.51",
+      "qty": "0.001",
+      "commission": "0",
+      "commissionAsset": "BNB",
+      "tradeId": 141011696
+    },
+    {
+      "price": "44261.51",
+      "qty": "0.00023",
+      "commission": "0",
+      "commissionAsset": "BNB",
+      "tradeId": 141011697
+    }
+  ],
+  "isIsolated": false,
+  "selfTradePreventionMode": "EXPIRE_MAKER"
+}symbol BTCFDUSD, bitcoin : 0.00392, stopPrice : 44239.37, limit : 44234.95placed stop loss
+{
+  "symbol": "BTCFDUSD",
+  "orderId": 1554315314,
+  "clientOrderId": "7FqWSHFGApu5iO0vSrPz5G",
+  "transactTime": 1701858902344,
+  "isIsolated": false
+}
+
+ Wed Dec 06 2023 11:40:00 GMT+0100 (Central European Standard Time) 
+fdusd =175.17 , bitcoin = 0.004 ; 
+Available 175.17 fdusd,borrowed NaN,  position is OUT.
+price is above ma, placing order...
+calculating 175.17*0.99/44216.65...{
+  "symbol": "BTCFDUSD",
+  "orderId": 1554404658,
+  "clientOrderId": "jbsr8T6G1ggyj9vOZs7CQv",
+  "transactTime": 1701859202656,
+  "price": "0",
+  "origQty": "0.00392",
+  "executedQty": "0.00392",
+  "cummulativeQuoteQty": "173.3087664",
+  "status": "FILLED",
+  "timeInForce": "GTC",
+  "type": "MARKET",
+  "side": "BUY",
+  "fills": [
+    {
+      "price": "44211.42",
+      "qty": "0.00392",
+      "commission": "0",
+      "commissionAsset": "BNB",
+      "tradeId": 141030045
+    }
+  ],
+  "isIsolated": false,
+  "selfTradePreventionMode": "EXPIRE_MAKER"
+}symbol BTCFDUSD, bitcoin : 0.00392, stopPrice : 44189.31, limit : 44184.89placed stop loss
+{
+  "symbol": "BTCFDUSD",
+  "orderId": 1554404804,
+  "clientOrderId": "9823i9huLVNr49MIlFz6fH",
+  "transactTime": 1701859203324,
+  "isIsolated": false
+}
+
+ Wed Dec 06 2023 11:45:00 GMT+0100 (Central European Standard Time) 
+fdusd =1.86 , bitcoin = 0.004 ; 
+balance : [object Object]cancelling SL
+[
+  {
+    "origClientOrderId": "9823i9huLVNr49MIlFz6fH",
+    "orderId": 1554404804,
+    "clientOrderId": "oJy9fCM98e3YadI9676ict",
+    "price": "44184.89000000",
+    "origQty": "0.00392000",
+    "executedQty": "0.00000000",
+    "cummulativeQuoteQty": "0.00000000",
+    "status": "CANCELED",
+    "timeInForce": "GTC",
+    "type": "STOP_LOSS_LIMIT",
+    "side": "SELL",
+    "symbol": "BTCFDUSD",
+    "orderListId": -1,
+    "isIsolated": false,
+    "selfTradePreventionMode": "EXPIRE_MAKER"
+  }
+]
+cancelOrds
+undefined
+raising stop at MA level.
+prevStop = NaN, ma = 43309.6, newStop = 43309.6 
+{
+  "symbol": "BTCFDUSD",
+  "orderId": 1554493484,
+  "clientOrderId": "wP9K65kGrTrjW7IPmnZr5v",
+  "transactTime": 1701859502525,
+  "isIsolated": false
+}
+
+
+ Wed Dec 06 2023 11:50:00 GMT+0100 (Central European Standard Time) 
+fdusd =1.86 , bitcoin = 0.004 ; 
+balance : [object Object]cancelling SL
+[
+  {
+    "origClientOrderId": "wP9K65kGrTrjW7IPmnZr5v",
+    "orderId": 1554493484,
+    "clientOrderId": "97Fb4sT4xTdCzUFZZEvAcq",
+    "price": "43283.61000000",
+    "origQty": "0.00392000",
+    "executedQty": "0.00000000",
+    "cummulativeQuoteQty": "0.00000000",
+    "status": "CANCELED",
+    "timeInForce": "GTC",
+    "type": "STOP_LOSS_LIMIT",
+    "side": "SELL",
+    "symbol": "BTCFDUSD",
+    "orderListId": -1,
+    "isIsolated": false,
+    "selfTradePreventionMode": "EXPIRE_MAKER"
+  }
+]
+cancelOrds
+undefined
+raising stop at MA level.
+prevStop = NaN, ma = 43309.6, newStop = 43309.6 
+{
+  "symbol": "BTCFDUSD",
+  "orderId": 1554635947,
+  "clientOrderId": "ybsQ8Briuo7ePfcC8Fupld",
+  "transactTime": 1701859802353,
+  "isIsolated": false
+}
+
+
+ Wed Dec 06 2023 11:55:00 GMT+0100 (Central European Standard Time) 
+fdusd =92.95 , bitcoin = 0.004 ; 
+balance {
+  "borrowed": 0,
+  "free": 92.95
+}Available 92.95 fdusd,borrowed NaN,  position is OUT.
+price is above ma, placing order...
+calculating 92.95*0.99/44037.73...{
+  "symbol": "BTCFDUSD",
+  "orderId": 1554795046,
+  "clientOrderId": "lF2cTmQglp4prHtaQEKPHl",
+  "transactTime": 1701860102436,
+  "price": "0",
+  "origQty": "0.00208",
+  "executedQty": "0.00208",
+  "cummulativeQuoteQty": "91.6128062",
+  "status": "FILLED",
+  "timeInForce": "GTC",
+  "type": "MARKET",
+  "side": "BUY",
+  "fills": [
+    {
+      "price": "44044.61",
+      "qty": "0.00034",
+      "commission": "0",
+      "commissionAsset": "BNB",
+      "tradeId": 141099407
+    },
+    {
+      "price": "44044.62",
+      "qty": "0.00174",
+      "commission": "0",
+      "commissionAsset": "BNB",
+      "tradeId": 141099408
+    }
+  ],
+  "isIsolated": false,
+  "selfTradePreventionMode": "EXPIRE_MAKER"
+}symbol BTCFDUSD, bitcoin : 0.00207, stopPrice : 44022.59, limit : 44018.19placed stop loss
+{
+  "symbol": "BTCFDUSD",
+  "orderId": 1554795331,
+  "clientOrderId": "IXAhkYxx02IFA8AcQWHBLv",
+  "transactTime": 1701860102703,
+  "isIsolated": false
+}
