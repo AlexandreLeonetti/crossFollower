@@ -1,12 +1,11 @@
-// robot
-// when it works, just host on heroku or aws
 require('dotenv').config();
 
-const crypto = require("crypto");
-const cron = require("node-cron");
-const robot = require("./robot");
 const express = require("express");
 const fs    =   require("fs");
+const crypto = require("crypto");
+const cron = require("node-cron");
+
+const robot = require("./robot");
 const cross = require("./cross");
 
 const _apiKey    = process.env.BINANCE_API_KEY;
@@ -35,20 +34,14 @@ async function buy(borrowed, symbol, bitcoin, _apiKey, _apiSecret){
     return tx;
 }
 
-
-async function strat(stopLoss, limitLoss, logStream) {
-    	//console.log(1 - stopLoss, 1 - limitLoss);
-    const currentDate = new Date();
-    let logMsg = `\n\n ${currentDate} \n`;
-    logStream.write(logMsg);
-    
-    
-	const symbol = "BTCFDUSD";
-
+async function TEST_BALANCE(_apiKey, _apiSecret, logStream){
     let fdusd = 0;
     let bitcoin= 0;
-	let balance = await cross.getCrossUsdDebt("FDUSD", _apiKey, _apiSecret);
     let bor     = 0;
+    let balance = await cross.getCrossUsdDebt("FDUSD", _apiKey, _apiSecret);
+    logStream.write(`\n balance `);
+    logStream.write(JSON.stringify(balance, null, 2));
+
 
     if(balance.error === true ){
         logStream.write(JSON.stringify(balance, null, 2));
@@ -61,31 +54,31 @@ async function strat(stopLoss, limitLoss, logStream) {
         }else{//<<<<<<< use values accordingly
             //have to mess with bitcoin quantity as well<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
 	        fdusd = formatter(balance.free, 1, 2);
-        bor     = formatter(balance.borrowed, 1, 2);
+            bor     = formatter(balance.borrowed, 1, 2);
 	        bitcoin = formatter(bitcoin, 1, 5);
-            logStream.write(`on second trial`);
-	        logStream.write(`fdusd =${fdusd} , bitcoin = ${bitcoin} ; \n`);
+            logStream.write(` \n on second trial`);
+	        logStream.write(`\n fdusd =${fdusd} , bitcoin = ${bitcoin} ; \n`);
+            return { fdusd : fdusd, bor:bor, bitcoin : bitcoin};
         }
     }else{
 	    fdusd   = formatter(balance.free, 1, 2);
         bor     = formatter(balance.borrowed, 1, 2);
 	    bitcoin = formatter(bitcoin, 1, 5);
-	    logStream.write(`fdusd =${fdusd} , bitcoin = ${bitcoin} ; \n`);
+	    logStream.write(`\n fdusd =${fdusd} , bitcoin = ${bitcoin} ; \n`);
+        return { fdusd : fdusd, bor:bor, bitcoin : bitcoin};
     }
+}
 
-	const price = await robot.getTickerPrice(symbol); //<<<<<<<<<<<<<<<<<<<<<<<<<
-    logStream.write(`balance `);
-    logStream.write(JSON.stringify(balance, null, 2));
 
-	if (fdusd > 35  ) { //<<< buy with borrow or buy normally
-		// WE HAVE MORE 35  FDUSD - position OUT
-        logStream.write(`Available ${fdusd} fdusd,borrowed ${bor},  position is OUT.\n`);
+async function ENTRY ( _apiKey, _apiSecret, logStream, fdusd, bor, bitcoin,symbol,price){
+
+        logStream.write(`\n Available ${fdusd} fdusd,borrowed ${bor},  position is OUT.\n`);
 		const maConditions = await robot.isAboveMa(price); //<<<<<<<<<<<<<
 		if (maConditions.isAbove) {
 
 			logStream.write("price is above ma, placing order...\n");
             logStream.write(`calculating ${fdusd}*0.99/${price}...`);
-            const str_bitcoin = (fdusd*2*0.99/price).toString();
+            const str_bitcoin = (fdusd*1*0.99/price).toString();
             const new_bitcoin = formatter(str_bitcoin,1,5); 
             const tx = await buy(bor, symbol, new_bitcoin, _apiKey, _apiSecret);
             /* account has insufficient balance for requested action */
@@ -117,16 +110,25 @@ async function strat(stopLoss, limitLoss, logStream) {
 		} else {
 			logStream.write(`price is under ma, not buying.\n`);
 		}
-	} else {
-		// WE DONT HAVE FDUSD - Position IN
 
-        /*
-		const cancelOrds = await robot.cancelOrders(
-			symbol,
-			_apiKey,
-			_apiSecret
-		);
-        */
+}
+
+async function strat(stopLoss, limitLoss, logStream) {
+
+    const currentDate = new Date();
+    let logMsg = `\n\n ***** ${currentDate} *****  \n`;
+    logStream.write(logMsg);
+    
+	const symbol = "BTCFDUSD";
+    let {fdusd, bor, bitcoin}= await TEST_BALANCE( _apiKey, _apiSecret, logStream );
+
+	const price = await robot.getTickerPrice(symbol); 
+    
+	if(fdusd > 35){ // position OUT == ENTRY CODE
+        
+        const entry = await ENTRY( _apiKey, _apiSecret, logStream, fdusd, bor, bitcoin, symbol, price);
+
+	}else{ // WE DONT HAVE FDUSD - Position IN == TRAIL STOP
 
         const cancelOrds =  await cross.cancelCrossOrders(symbol, _apiKey, _apiSecret);
 
@@ -156,16 +158,21 @@ async function strat(stopLoss, limitLoss, logStream) {
            
 		} else {
 			// there are stops to cancel
+            /* there is no ".stopPrice" returned from cancelOrds[0], only 
+             * the limit price, we must check if making stopPrice == 1.002* limit price is ok
+             * in a recursive setup
+             */
             logStream.write("cancelOrds\n");
-
-			logStream.write(JSON.stringify(cancelOrds[0].stopPrice, null,2)+`\n`);
             
-            const prevStop = formatter(cancelOrds[0].stopPrice,1,2);
-			const stop = await robot.isAboveSlowMa(prevStop); // <<<<<<<<<<<<<
+			logStream.write(JSON.stringify(cancelOrds[0], null,2)+`\n`);
+			logStream.write(JSON.stringify(cancelOrds[0].price, null,2)+`\n`);
+            
+            const prevLimit = formatter(cancelOrds[0].price,1,2);
+			const stop = await robot.isAboveSlowMa(prevLimit); // <<<<<<<<<<<<<
 			if (stop.isAbove) {
 
-				let stopPrice = formatter(prevStop, 1, 2);
-				let limit = formatter(prevStop, 1 - limitLoss, 2);
+				let stopPrice = formatter(prevLimit,(1+ limitLoss  - stopLoss ) , 2);
+				let limit = formatter(prevLimit, 1 , 2);
  
                	let cancelledQty= cancelOrds[0].origQty;
 				bitcoin = formatter(cancelledQty, 1, 5);
@@ -203,7 +210,7 @@ async function strat(stopLoss, limitLoss, logStream) {
 					_apiKey,
 					_apiSecret
 				);
-                logStream.write(`prevStop = ${prevStop}, ma = ${stop.maPrice}, newStop = ${stopPrice} \n`);
+                logStream.write(`prevLimit = ${prevLimit}, ma = ${stop.maPrice}, newStop = ${stopPrice} \n`);
                 logStream.write(JSON.stringify(stopLossTx, null, 2)+ `\n`);
                 
 			}

@@ -1,0 +1,335 @@
+
+
+ Thu Dec 07 2023 14:55:00 GMT+0100 (Central European Standard Time) 
+fdusd =181.43 , bitcoin = 0 ; 
+balance 
+
+ Thu Dec 07 2023 15:00:00 GMT+0100 (Central European Standard Time) 
+balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}fdusd =181.43 , bitcoin = 0 ; 
+Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 15:05:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 15:10:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 15:15:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 15:20:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 15:25:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 15:30:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 15:35:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 15:40:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 15:45:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 15:50:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 15:55:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 16:00:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 16:05:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 16:10:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 16:15:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 16:20:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 16:25:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 16:30:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 16:35:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 16:40:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 16:45:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 16:50:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Thu Dec 07 2023 16:55:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+
+ ***** Thu Dec 07 2023 17:00:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+
+
+ ***** Thu Dec 07 2023 17:05:00 GMT+0100 (Central European Standard Time) *****  
+
+ balance {
+  "borrowed": 90.23,
+  "free": 181.43,
+  "error": false
+}
+ fdusd =181.43 , bitcoin = 0 ; 
+
+ Available 181.43 fdusd,borrowed 90.23,  position is OUT.
+price is under ma, not buying.

@@ -55,6 +55,7 @@ async function cancelCrossOrders(symbol, apiKey, apiSecret){
 
 
                     const response = await request.json();
+                    console.log("response from cancelling open orders");
                     console.log(response);
                     return response;
 
@@ -190,9 +191,11 @@ async function getCrossUsdDebt(symbol, apiKey, apiSecret){
         //userAssets is a large array.
         //element.asset === "BTC"
         //return response.assets[0].baseAsset.borrowed;
-        return {borrowed : usdBorrowed, free : usdFree}; 
+        return {borrowed : usdBorrowed, free : usdFree, error : false }; 
     }catch(err){
-        console.log(err);
+        
+        console.log("err in getting balance", err);
+        return { error : true, reason : err};
     }
 }
 async function getCrossBtcDebt(symbol, apiKey, apiSecret){
