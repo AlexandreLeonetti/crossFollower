@@ -14,7 +14,7 @@ const _apiSecret = process.env.BINANCE_SECRET;
 const app = express();
 const formatter = robot.formatter;
 
-app.listen(6000, () => console.log("app listening on 5000"));
+app.listen(6002, () => console.log("app listening on 6002"));
 
 app.get("/", (req,res) => res.json("API is running"));
 
