@@ -184,14 +184,20 @@ async function getCrossUsdDebt(symbol, apiKey, apiSecret){
         //console.log(response);
         const respArr= response.userAssets;
         const usdInfo = respArr.find((e) => e.asset === "FDUSD");
+        const btcInfo = respArr.find((e) => e.asset === "BTC");
+
         const usdBorrowed = formatter(usdInfo.borrowed, 1, 2);
+        const btcBorrowed = formatter(btcInfo.borrowed, 1, 5);
+
         const usdFree     = formatter(usdInfo.free,1,2);
+        const btcFree     = formatter(btcInfo.free,1,5);
+
         //console.log(usdBorrowed, typeof usdBorrowed);
         
         //userAssets is a large array.
         //element.asset === "BTC"
         //return response.assets[0].baseAsset.borrowed;
-        return {borrowed : usdBorrowed, free : usdFree, error : false }; 
+        return {borrowed : usdBorrowed, free : usdFree, error : false , btcFree : btcFree}; 
     }catch(err){
         
         console.log("err in getting balance", err);
