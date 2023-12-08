@@ -55,8 +55,8 @@ async function cancelCrossOrders(symbol, apiKey, apiSecret){
 
 
                     const response = await request.json();
-                    console.log("response from cancelling open orders");
-                    console.log(response);
+                    //console.log("response from cancelling open orders");
+                    //console.log(response);
                     return response;
 
                 }catch(error){
@@ -81,7 +81,7 @@ async function stopSell(symbol,  action, quantity, stopPrice, price, apiKey, api
                                     timeInForce : "GTC",
                                     timestamp
                                 };
-                    console.log(params);
+                    //console.log(params);
 
                     let queryString = Object.keys(params).map(key=> `${key}=${encodeURIComponent(params[key])}`).join("&");
 
@@ -101,8 +101,8 @@ async function stopSell(symbol,  action, quantity, stopPrice, price, apiKey, api
                                 })
 
                     const response = await request.json();
-                    console.log("response from stop loss order");
-                    console.log(response);
+                    //console.log("response from stop loss order");
+                    //console.log(response);
                     return response;
                 }catch(error){
                             console.log("Error", error)
@@ -126,7 +126,7 @@ async function stopBuy (symbol,  action, quantity, stopPrice, price, apiKey, api
                                     timeInForce : "GTC",
                                     timestamp
                                 };
-                    console.log(params);
+                    //console.log(params);
 
                     let queryString = Object.keys(params).map(key=> `${key}=${encodeURIComponent(params[key])}`).join("&");
 
@@ -146,8 +146,8 @@ async function stopBuy (symbol,  action, quantity, stopPrice, price, apiKey, api
                                 })
 
                     const response = await request.json();
-                    console.log("response from stop loss order");
-                    console.log(response);
+                    //console.log("response from stop loss order");
+                    //console.log(response);
                     return response;
                 }catch(error){
                             console.log("Error", error)
@@ -233,7 +233,7 @@ async function getCrossBtcDebt(symbol, apiKey, apiSecret){
         const respArr= response.userAssets;
         const btcInfo = respArr.find((e) => e.asset === "BTC");
         const btcBorrowed = formatter(btcInfo.borrowed, 1, 5);
-        console.log(btcBorrowed, typeof btcBorrowed);
+        //console.log(btcBorrowed, typeof btcBorrowed);
         
         //userAssets is a large array.
         //element.asset === "BTC"
@@ -263,7 +263,7 @@ async function crossBuy(symbol, quantity, apiKey, apiSecret){
                                     /*timeInForce : "GTC", *//* mandatory for limit orders */
                                     timestamp
                             };
-            console.log(params);
+            //console.log(params);
 
              let queryString = Object.keys(params).map(key=> `${key}=${encodeURIComponent(params[key])}`).join("&");
 
@@ -308,7 +308,7 @@ async function crossBuyNormal(symbol, quantity, apiKey, apiSecret){
                                     /*timeInForce : "GTC", *//* mandatory for limit orders */
                                     timestamp
                             };
-            console.log(params);
+            //console.log(params);
 
              let queryString = Object.keys(params).map(key=> `${key}=${encodeURIComponent(params[key])}`).join("&");
 
@@ -354,7 +354,7 @@ async function sellShortCross(symbol, quantity, apiKey, apiSecret){
                                     /*timeInForce : "GTC", *//* mandatory for limit orders */
                                     timestamp
                             };
-            console.log(params);
+            //console.log(params);
 
              let queryString = Object.keys(params).map(key=> `${key}=${encodeURIComponent(params[key])}`).join("&");
 
