@@ -185,8 +185,31 @@ async COPY_STOP (  symbol, price, stopLoss, limitLoss, bitcoin,
                 logStream.write(JSON.stringify(stopLossTx), null, 2);
 				logStream.write("\n stop is above and ma is below, do nothing\n");
 }
-
 async function COMPARE_STOP(cancelOrds, logStream){
+
+async function strat(stopLoss, limitLoss, logStream) {
+
+	const symbol        = "BTCFDUSD";
+    const currentDate   = new Date();
+
+    let logMsg          = `\n\n ***** ${currentDate} *****  \n`;
+    logStream.write(logMsg);
+    let { fdusd, bor, bitcoin } = await TEST_BALANCE( _apiKey, _apiSecret, logStream );
+
+	const price = await robot.getTickerPrice(symbol); 
+    
+	if(fdusd > 35){ // position OUT == ENTRY CODE
+        const entry = await ENTRY( _apiKey, _apiSecret, logStream, fdusd, bor, bitcoin, symbol, price);
+	}else{ // WE DONT HAVE FDUSD - Position IN == TRAIL STOP
+
+        const cancelOrds =  await cross.cancelCrossOrders(symbol, _apiKey, _apiSecret);
+
+        logStream.write("cancelling SL\n");
+        logStream.write(JSON.stringify(cancelOrds, null, 2)+`\n`);
+
+		if (Object.hasOwn(cancelOrds, "code")) {
+            const emergencyStop = await EMERGENCY_STOP( symbol, price, stopLoss, limitLoss, bitcoin, _apiKey, _apiSecret, logStream );
+		} else {
 			// there are stops to cancel
             /* there is no ".stopPrice" returned from cancelOrds[0], only 
              * the limit price, we must check if making stopPrice == 1.002* limit price is ok
@@ -200,52 +223,21 @@ async function COMPARE_STOP(cancelOrds, logStream){
             const prevLimit = formatter(cancelOrds[0].price,1,2);
 			const stop = await robot.isAboveSlowMa(prevLimit); // <<<<<<<<<<<<<
 
-            return stop;
+            const stop = await COMPARE_STOP(cancelOrds);
 
-
-}
-async function CANCEL(symbol, _apiKey, _apiSecret, logStream){
-        // WE DONT HAVE FDUSD - Position IN == TRAIL STOP
-
-        const cancelOrds =  await cross.cancelCrossOrders(symbol, _apiKey, _apiSecret);
-
-        logStream.write("cancelling SL\n");
-        logStream.write(JSON.stringify(cancelOrds, null, 2)+`\n`);
-        return cancelOrds;
-}
-async function strat(stopLoss, limitLoss, logStream) {
-
-	const symbol        = "BTCFDUSD";
-    const currentDate   = new Date();
-    const logMsg        = `\n\n ***** ${currentDate} *****  \n`;
-
-    logStream.write(logMsg);
-    let { fdusd, bor, bitcoin } = await TEST_BALANCE( _apiKey, _apiSecret, logStream );
-
-	const price                 = await robot.getTickerPrice(symbol); 
-    
-	if(fdusd > 35){ 
-        const entry      = await ENTRY( _apiKey, _apiSecret, logStream, fdusd, bor, bitcoin, symbol, price);
-	}else{ 
-        const cancelOrds = await CANCEL(symbol, _apiKey, _apiSecret, logStream);
-
-		if (Object.hasOwn(cancelOrds, "code")) {
-            const emergencyStop     = await EMERGENCY_STOP( symbol, price, stopLoss, limitLoss, bitcoin, _apiKey, _apiSecret, logStream );
-		} else {
-            const stop              = await COMPARE_STOP(cancelOrds);
 			if (stop.isAbove) {
-                const copyStop      = await COPY_STOP( symbol, price, stopLoss, limitLoss, bitcoin, cancelOrds,  _apiKey, _apiSecret, logStream);
+                const copyStop = await COPY_STOP( symbol, price, stopLoss, limitLoss, bitcoin, cancelOrds,  _apiKey, _apiSecret, logStream);
 			} else {
-                const  raising      = await RAISE_STOP(stop, cancelOrds, logStream, _apiKey, _apiSecret);
+				//raise stop to ma price
+                const  raising = await RAISE_STOP(stop, cancelOrds, logStream, _apiKey, _apiSecret);
+             
 			}
 		}
 	}
-
 	setTimeout(()=>{
 		logStream.end();
 		logStream.destroy();
 	}, 9000);
-
 }
 
 
