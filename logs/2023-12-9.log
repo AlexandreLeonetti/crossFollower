@@ -2299,3 +2299,446 @@ price is under ma, not buying.
 
  Available 190.92 fdusd,borrowed 99.63,  position is OUT.
 price is under ma, not buying.
+
+
+ ***** Sat Dec 09 2023 16:29:58 GMT+0000 (Coordinated Universal Time) *****  
+
+ balance 
+{
+  "borrowed": 99.63,
+  "free": 190.92,
+  "error": false,
+  "btcFree": 0.00003
+}
+ fdusd =190.92 , bitcoin = 0.00003 ; 
+
+ Available 190.92 fdusd,borrowed 99.63,  position is OUT.
+price is above ma, placing order...
+calculating 191.28999999999996*0.99/44046.62...Borrowed 99.63, above 50, so crossBuyNormal. 
+{
+  "symbol": "BTCFDUSD",
+  "orderId": 1620910291,
+  "clientOrderId": "1uVB05vbNAJEF52MfVvusj",
+  "transactTime": 1702139400055,
+  "price": "0",
+  "origQty": "0.00429",
+  "executedQty": "0.00429",
+  "cummulativeQuoteQty": "188.9483256",
+  "status": "FILLED",
+  "timeInForce": "GTC",
+  "type": "MARKET",
+  "side": "BUY",
+  "fills": [
+    {
+      "price": "44043.88",
+      "qty": "0.00362",
+      "commission": "0",
+      "commissionAsset": "BNB",
+      "tradeId": 150936411
+    },
+    {
+      "price": "44044",
+      "qty": "0.00067",
+      "commission": "0",
+      "commissionAsset": "BNB",
+      "tradeId": 150936412
+    }
+  ],
+  "isIsolated": false,
+  "selfTradePreventionMode": "EXPIRE_MAKER"
+}
+{
+  "symbol": "BTCFDUSD",
+  "orderId": 1620910291,
+  "clientOrderId": "1uVB05vbNAJEF52MfVvusj",
+  "transactTime": 1702139400055,
+  "price": "0",
+  "origQty": "0.00429",
+  "executedQty": "0.00429",
+  "cummulativeQuoteQty": "188.9483256",
+  "status": "FILLED",
+  "timeInForce": "GTC",
+  "type": "MARKET",
+  "side": "BUY",
+  "fills": [
+    {
+      "price": "44043.88",
+      "qty": "0.00362",
+      "commission": "0",
+      "commissionAsset": "BNB",
+      "tradeId": 150936411
+    },
+    {
+      "price": "44044",
+      "qty": "0.00067",
+      "commission": "0",
+      "commissionAsset": "BNB",
+      "tradeId": 150936412
+    }
+  ],
+  "isIsolated": false,
+  "selfTradePreventionMode": "EXPIRE_MAKER"
+}symbol BTCFDUSD, bitcoin : 0.00429, stopPrice : 44026.28, limit : 44017.47 
+placed stop loss
+{
+  "symbol": "BTCFDUSD",
+  "orderId": 1620910576,
+  "clientOrderId": "uifo1yeezQlTQ3CpbJ4rlU",
+  "transactTime": 1702139400822,
+  "isIsolated": false
+}
+
+
+ ***** Sat Dec 09 2023 16:44:58 GMT+0000 (Coordinated Universal Time) *****  
+
+ balance 
+{
+  "borrowed": 99.63,
+  "free": 1.98,
+  "error": false,
+  "btcFree": 0.00003
+}
+ fdusd =1.98 , bitcoin = 0.00003 ; 
+cancelling SL
+[
+  {
+    "origClientOrderId": "uifo1yeezQlTQ3CpbJ4rlU",
+    "orderId": 1620910576,
+    "clientOrderId": "lKTredvZE5fI7BOaeMw44S",
+    "price": "44017.47000000",
+    "origQty": "0.00429000",
+    "executedQty": "0.00000000",
+    "cummulativeQuoteQty": "0.00000000",
+    "status": "CANCELED",
+    "timeInForce": "GTC",
+    "type": "STOP_LOSS_LIMIT",
+    "side": "SELL",
+    "symbol": "BTCFDUSD",
+    "orderListId": -1,
+    "isIsolated": false,
+    "selfTradePreventionMode": "EXPIRE_MAKER"
+  }
+]
+cancelOrds
+{
+  "origClientOrderId": "uifo1yeezQlTQ3CpbJ4rlU",
+  "orderId": 1620910576,
+  "clientOrderId": "lKTredvZE5fI7BOaeMw44S",
+  "price": "44017.47000000",
+  "origQty": "0.00429000",
+  "executedQty": "0.00000000",
+  "cummulativeQuoteQty": "0.00000000",
+  "status": "CANCELED",
+  "timeInForce": "GTC",
+  "type": "STOP_LOSS_LIMIT",
+  "side": "SELL",
+  "symbol": "BTCFDUSD",
+  "orderListId": -1,
+  "isIsolated": false,
+  "selfTradePreventionMode": "EXPIRE_MAKER"
+}
+"44017.47000000"
+we are placing back the same stop because stop above ma
+{"symbol":"BTCFDUSD","orderId":1621106240,"clientOrderId":"uXJthcbrk86gM1EiClsUL6","transactTime":1702140300084,"isIsolated":false}
+ stop is above and ma is below, do nothing
+
+
+ ***** Sat Dec 09 2023 16:59:58 GMT+0000 (Coordinated Universal Time) *****  
+
+ balance 
+{
+  "borrowed": 99.63,
+  "free": 1.98,
+  "error": false,
+  "btcFree": 0.00003
+}
+ fdusd =1.98 , bitcoin = 0.00003 ; 
+cancelling SL
+[
+  {
+    "origClientOrderId": "uXJthcbrk86gM1EiClsUL6",
+    "orderId": 1621106240,
+    "clientOrderId": "M3ZWhZ7D3NWpq2Ob0hwBVz",
+    "price": "44017.47000000",
+    "origQty": "0.00429000",
+    "executedQty": "0.00000000",
+    "cummulativeQuoteQty": "0.00000000",
+    "status": "CANCELED",
+    "timeInForce": "GTC",
+    "type": "STOP_LOSS_LIMIT",
+    "side": "SELL",
+    "symbol": "BTCFDUSD",
+    "orderListId": -1,
+    "isIsolated": false,
+    "selfTradePreventionMode": "EXPIRE_MAKER"
+  }
+]
+cancelOrds
+{
+  "origClientOrderId": "uXJthcbrk86gM1EiClsUL6",
+  "orderId": 1621106240,
+  "clientOrderId": "M3ZWhZ7D3NWpq2Ob0hwBVz",
+  "price": "44017.47000000",
+  "origQty": "0.00429000",
+  "executedQty": "0.00000000",
+  "cummulativeQuoteQty": "0.00000000",
+  "status": "CANCELED",
+  "timeInForce": "GTC",
+  "type": "STOP_LOSS_LIMIT",
+  "side": "SELL",
+  "symbol": "BTCFDUSD",
+  "orderListId": -1,
+  "isIsolated": false,
+  "selfTradePreventionMode": "EXPIRE_MAKER"
+}
+"44017.47000000"
+we are placing back the same stop because stop above ma
+{"symbol":"BTCFDUSD","orderId":1621264302,"clientOrderId":"10rE8uwI14k1ep2YNGTX16","transactTime":1702141200502,"isIsolated":false}
+ stop is above and ma is below, do nothing
+
+
+ ***** Sat Dec 09 2023 17:14:58 GMT+0000 (Coordinated Universal Time) *****  
+
+ balance 
+{
+  "borrowed": 99.63,
+  "free": 190.85,
+  "error": false,
+  "btcFree": 0.00003
+}
+ fdusd =190.85 , bitcoin = 0.00003 ; 
+
+ Available 190.85 fdusd,borrowed 99.63,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Sat Dec 09 2023 17:29:58 GMT+0000 (Coordinated Universal Time) *****  
+
+ balance 
+{
+  "borrowed": 99.63,
+  "free": 190.85,
+  "error": false,
+  "btcFree": 0.00003
+}
+ fdusd =190.85 , bitcoin = 0.00003 ; 
+
+ Available 190.85 fdusd,borrowed 99.63,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Sat Dec 09 2023 17:44:58 GMT+0000 (Coordinated Universal Time) *****  
+
+ balance 
+{
+  "borrowed": 99.63,
+  "free": 190.85,
+  "error": false,
+  "btcFree": 0.00003
+}
+ fdusd =190.85 , bitcoin = 0.00003 ; 
+
+ Available 190.85 fdusd,borrowed 99.63,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Sat Dec 09 2023 17:59:58 GMT+0000 (Coordinated Universal Time) *****  
+
+ balance 
+{
+  "borrowed": 99.63,
+  "free": 190.85,
+  "error": false,
+  "btcFree": 0.00003
+}
+ fdusd =190.85 , bitcoin = 0.00003 ; 
+
+ Available 190.85 fdusd,borrowed 99.63,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Sat Dec 09 2023 18:14:58 GMT+0000 (Coordinated Universal Time) *****  
+
+ balance 
+{
+  "borrowed": 99.63,
+  "free": 190.85,
+  "error": false,
+  "btcFree": 0.00003
+}
+ fdusd =190.85 , bitcoin = 0.00003 ; 
+
+ Available 190.85 fdusd,borrowed 99.63,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Sat Dec 09 2023 18:29:58 GMT+0000 (Coordinated Universal Time) *****  
+
+ balance 
+{
+  "borrowed": 99.63,
+  "free": 190.85,
+  "error": false,
+  "btcFree": 0.00003
+}
+ fdusd =190.85 , bitcoin = 0.00003 ; 
+
+ Available 190.85 fdusd,borrowed 99.63,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Sat Dec 09 2023 18:44:58 GMT+0000 (Coordinated Universal Time) *****  
+
+ balance 
+{
+  "borrowed": 99.63,
+  "free": 190.85,
+  "error": false,
+  "btcFree": 0.00003
+}
+ fdusd =190.85 , bitcoin = 0.00003 ; 
+
+ Available 190.85 fdusd,borrowed 99.63,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Sat Dec 09 2023 18:59:58 GMT+0000 (Coordinated Universal Time) *****  
+
+ balance 
+{
+  "borrowed": 99.63,
+  "free": 190.85,
+  "error": false,
+  "btcFree": 0.00003
+}
+ fdusd =190.85 , bitcoin = 0.00003 ; 
+
+ Available 190.85 fdusd,borrowed 99.63,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Sat Dec 09 2023 19:14:58 GMT+0000 (Coordinated Universal Time) *****  
+
+ balance 
+{
+  "borrowed": 99.63,
+  "free": 190.85,
+  "error": false,
+  "btcFree": 0.00003
+}
+ fdusd =190.85 , bitcoin = 0.00003 ; 
+
+ Available 190.85 fdusd,borrowed 99.63,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Sat Dec 09 2023 19:29:58 GMT+0000 (Coordinated Universal Time) *****  
+
+ balance 
+{
+  "borrowed": 99.63,
+  "free": 190.85,
+  "error": false,
+  "btcFree": 0.00003
+}
+ fdusd =190.85 , bitcoin = 0.00003 ; 
+
+ Available 190.85 fdusd,borrowed 99.63,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Sat Dec 09 2023 19:44:58 GMT+0000 (Coordinated Universal Time) *****  
+
+ balance 
+{
+  "borrowed": 99.63,
+  "free": 190.85,
+  "error": false,
+  "btcFree": 0.00003
+}
+ fdusd =190.85 , bitcoin = 0.00003 ; 
+
+ Available 190.85 fdusd,borrowed 99.63,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Sat Dec 09 2023 19:59:58 GMT+0000 (Coordinated Universal Time) *****  
+
+ balance 
+{
+  "borrowed": 99.63,
+  "free": 190.85,
+  "error": false,
+  "btcFree": 0.00003
+}
+ fdusd =190.85 , bitcoin = 0.00003 ; 
+
+ Available 190.85 fdusd,borrowed 99.63,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Sat Dec 09 2023 20:14:58 GMT+0000 (Coordinated Universal Time) *****  
+
+ balance 
+{
+  "borrowed": 99.63,
+  "free": 190.85,
+  "error": false,
+  "btcFree": 0.00003
+}
+ fdusd =190.85 , bitcoin = 0.00003 ; 
+
+ Available 190.85 fdusd,borrowed 99.63,  position is OUT.
+price is under ma, not buying.
+
+
+ ***** Sat Dec 09 2023 20:29:58 GMT+0000 (Coordinated Universal Time) *****  
+
+ balance 
+{
+  "borrowed": 99.63,
+  "free": 1.06,
+  "error": false,
+  "btcFree": 0.00003
+}
+ fdusd =1.06 , bitcoin = 0.00003 ; 
+cancelling SL
+[
+  {
+    "origClientOrderId": "PBicltZYZaYSQpqSfPtFNp",
+    "orderId": 1622895062,
+    "clientOrderId": "UnYnPKXF3BxRPLC0somPFw",
+    "price": "43767.64000000",
+    "origQty": "0.00432000",
+    "executedQty": "0.00000000",
+    "cummulativeQuoteQty": "0.00000000",
+    "status": "CANCELED",
+    "timeInForce": "GTC",
+    "type": "STOP_LOSS_LIMIT",
+    "side": "SELL",
+    "symbol": "BTCFDUSD",
+    "orderListId": -1,
+    "isIsolated": false,
+    "selfTradePreventionMode": "EXPIRE_MAKER"
+  }
+]
+cancelOrds
+{
+  "origClientOrderId": "PBicltZYZaYSQpqSfPtFNp",
+  "orderId": 1622895062,
+  "clientOrderId": "UnYnPKXF3BxRPLC0somPFw",
+  "price": "43767.64000000",
+  "origQty": "0.00432000",
+  "executedQty": "0.00000000",
+  "cummulativeQuoteQty": "0.00000000",
+  "status": "CANCELED",
+  "timeInForce": "GTC",
+  "type": "STOP_LOSS_LIMIT",
+  "side": "SELL",
+  "symbol": "BTCFDUSD",
+  "orderListId": -1,
+  "isIsolated": false,
+  "selfTradePreventionMode": "EXPIRE_MAKER"
+}
+"43767.64000000"
+raising stop at MA level.
