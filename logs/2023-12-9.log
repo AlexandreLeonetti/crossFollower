@@ -2284,3 +2284,18 @@ price is under ma, not buying.
 
  Available 190.92 fdusd,borrowed 99.63,  position is OUT.
 price is under ma, not buying.
+
+
+ ***** Sat Dec 09 2023 16:14:58 GMT+0000 (Coordinated Universal Time) *****  
+
+ balance 
+{
+  "borrowed": 99.63,
+  "free": 190.92,
+  "error": false,
+  "btcFree": 0.00003
+}
+ fdusd =190.92 , bitcoin = 0.00003 ; 
+
+ Available 190.92 fdusd,borrowed 99.63,  position is OUT.
+price is under ma, not buying.
