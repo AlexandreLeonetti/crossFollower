@@ -14,9 +14,9 @@ const _apiSecret = process.env.BINANCE_SECRET;
 const app = express();
 const formatter = robot.formatter;
 
-app.listen(6000, () => console.log("app listening on 5000"));
+//app.listen(6000, () => console.log("app listening on 5000"));
 
-app.get("/", (req,res) => res.json("API is running"));
+//app.get("/", (req,res) => res.json("API is running"));
 
 function logCurrentDay() {
 	      const currentDate = new Date();
@@ -120,6 +120,7 @@ async function ENTRY (stopLoss, limitLoss,  _apiKey, _apiSecret, logStream, fdus
 async function RAISE_STOP(stop, cancelOrds, symbol, price, stopLoss, limitLoss, bitcoin,  _apiKey, _apiSecret,logStream){
             const prevLimit = formatter(cancelOrds[0].price,1,2);
 
+	try{
                 logStream.write(`raising stop at MA level.\n`);
 				origCurrency = cancelOrds[0].origQty;
 				bitcoin = formatter(origCurrency, 1, 5);
@@ -138,6 +139,10 @@ async function RAISE_STOP(stop, cancelOrds, symbol, price, stopLoss, limitLoss, 
 				);
                 logStream.write(`prevLimit = ${prevLimit}, ma = ${stop.maPrice}, newStop = ${stopPrice} \n`);
                 logStream.write(JSON.stringify(stopLossTx, null, 2)+ `\n`);
+	}catch(err){
+		logStream.write(`error in RAISE_STOP\n`);
+		logStream.write(JSON.stringify(err, null, 2)+`\n`);
+	}
 }
 
 async function  EMERGENCY_STOP(  symbol, price, stopLoss, limitLoss, bitcoin,
@@ -256,7 +261,7 @@ async function strat(stopLoss, limitLoss, logStream) {
 
 
 cronExpression = "58 14,29,44,59 * * * *";
-//cronExpression = "30 */2 * * * *";
+//cronExpression = "30 */5 * * * *";
 
 cron.schedule(cronExpression , () => {
 	const day = logCurrentDay();
