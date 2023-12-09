@@ -14,7 +14,7 @@ const _apiSecret = process.env.BINANCE_SECRET;
 const app = express();
 const formatter = robot.formatter;
 
-app.listen(6002, () => console.log("app listening on 6002"));
+app.listen(6000, () => console.log("app listening on 5000"));
 
 app.get("/", (req,res) => res.json("API is running"));
 
@@ -117,7 +117,8 @@ async function ENTRY (stopLoss, limitLoss,  _apiKey, _apiSecret, logStream, fdus
 
 }
 
-async function RAISE_STOP(stop, cancelOrds, logStream, _apiKey, _apiSecret){
+async function RAISE_STOP(stop, cancelOrds, symbol, price, stopLoss, limitLoss, bitcoin,  _apiKey, _apiSecret,logStream){
+            const prevLimit = formatter(cancelOrds[0].price,1,2);
 
                 logStream.write(`raising stop at MA level.\n`);
 				origCurrency = cancelOrds[0].origQty;
@@ -241,7 +242,7 @@ async function strat(stopLoss, limitLoss, logStream) {
 			if (stop.isAbove) {
                 const copyStop      = await COPY_STOP( symbol, price, stopLoss, limitLoss, bitcoin, cancelOrds,  _apiKey, _apiSecret, logStream);
 			} else {
-                const  raising      = await RAISE_STOP(stop, cancelOrds, logStream, _apiKey, _apiSecret);
+                const  raising      = await RAISE_STOP (stop, cancelOrds, symbol, price, stopLoss, limitLoss, bitcoin,  _apiKey, _apiSecret,logStream);
 			}
 		}
 	}
@@ -255,7 +256,7 @@ async function strat(stopLoss, limitLoss, logStream) {
 
 
 cronExpression = "58 14,29,44,59 * * * *";
-//cronExpression = "0 */5 * * * *";
+//cronExpression = "30 */2 * * * *";
 
 cron.schedule(cronExpression , () => {
 	const day = logCurrentDay();
