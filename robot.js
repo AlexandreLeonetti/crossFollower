@@ -31,15 +31,15 @@ async function isAboveMa(x){
 
 		            const data       = await priceFetch.json();
                     const _ma25       = data.ma25;
-                    const _ma100       = data.ma100;
+                    const _ma400       = data.ma400;
                     
                     const ma25      = formatter(_ma25,1,2);
-                    const ma100      = formatter(_ma100,1,2);
+                    const ma400      = formatter(_ma400,1,2);
 
 		            const maPrice    = ma25/*extract price*/;
 		            const isAboveMa25   = x>=ma25*1.0014; /* true if x is 0.14% above ma*/
-                    const ma25AboveMa100 = ma25>= ma100*0.9999;
-                    const b = isAboveMa25 && ma25AboveMa100; 
+                    const ma25AboveMa400 = ma25>= ma400*0.9999;
+                    const b = isAboveMa25 && ma25AboveMa400; 
 		            const obj = {isAbove: b, maPrice: maPrice}
 		            //console.log(obj);
 		            return obj ;
@@ -53,12 +53,12 @@ async function isAboveSlowMa(x){
 	    try {
 		            const priceFetch = await fetch(`http://16.170.155.76:5000/sig`);
 		            const data       = await priceFetch.json();
-                    const _ma100     = data.ma100;
-                    const ma100      = formatter(_ma100,1,2);
+                    const _ma400     = data.ma400;
+                    const ma400      = formatter(_ma400,1,2);
 
-		            const maPrice    = ma100/*extract price*/;
-		            const isAboveMa100   = x>=ma100; /* true if x is 0.14% above ma*/
-                    const b = isAboveMa100 ; 
+		            const maPrice    = ma400/*extract price*/;
+		            const isAboveMa400   = x>=ma400; /* true if x is  above ma*/
+                    const b = isAboveMa400 ; 
 		            const obj = {isAbove: b, maPrice: maPrice}
 		            return obj ;
 		        }catch(err){
