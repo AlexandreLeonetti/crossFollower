@@ -11,12 +11,9 @@ const cross = require("./cross");
 const _apiKey    = process.env.BINANCE_API_KEY;
 const _apiSecret = process.env.BINANCE_SECRET;
 
-//const app = express();
 const formatter = robot.formatter;
 
-//app.listen(6000, () => console.log("app listening on 5000"));
 
-//app.get("/", (req,res) => res.json("API is running"));
 
 function logCurrentDay() {
 	      const currentDate = new Date();
