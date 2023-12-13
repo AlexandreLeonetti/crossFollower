@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const express = require("express");
+//const express = require("express");
 const fs    =   require("fs");
 const crypto = require("crypto");
 const cron = require("node-cron");
@@ -11,7 +11,7 @@ const cross = require("./cross");
 const _apiKey    = process.env.BINANCE_API_KEY;
 const _apiSecret = process.env.BINANCE_SECRET;
 
-const app = express();
+//const app = express();
 const formatter = robot.formatter;
 
 //app.listen(6000, () => console.log("app listening on 5000"));
