@@ -257,7 +257,7 @@ async function strat(stopLoss, limitLoss, logStream) {
 }
 
 
-cronExpression = "58 14,29,44,59 * * * *";
+cronExpression = "57 14,29,44,59 * * * *";
 //cronExpression = "30 */5 * * * *";
 
 cron.schedule(cronExpression , () => {
