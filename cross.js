@@ -197,13 +197,14 @@ async function getCrossUsdDebt(symbol, apiKey, apiSecret){
         //userAssets is a large array.
         //element.asset === "BTC"
         //return response.assets[0].baseAsset.borrowed;
-        return {borrowed : usdBorrowed, free : usdFree, error : false , btcFree : btcFree}; 
+        return {borrowed : usdBorrowed, free : usdFree, btcFree : btcFree, btcBorrowed : btcBorrowed, error : false  }; 
     }catch(err){
         
         console.log("err in getting balance", err);
         return { error : true, reason : err};
     }
 }
+/*
 async function getCrossBtcDebt(symbol, apiKey, apiSecret){
     try{
         const timestamp = Date.now();
@@ -242,7 +243,7 @@ async function getCrossBtcDebt(symbol, apiKey, apiSecret){
     }catch(err){
         console.log(err);
     }
-}
+}*/
 /* crossBuy */
 
 
@@ -347,7 +348,7 @@ async function sellShortCross(symbol, quantity, apiKey, apiSecret){
                                     side : "SELL",
                                     type : "MARKET",/*MARKET*/
                                     /*quoteOrderQty,*/
-                                    quantity: 0.0005,
+                                    quantity: quantity,
                                     /*price : 40000,*/
                                     newOrderRespType:"FULL",
                                     sideEffectType : "AUTO_BORROW_REPAY",
@@ -389,7 +390,7 @@ async function sellShortCross(symbol, quantity, apiKey, apiSecret){
 module.exports.getTickerPrice   = getTickerPrice; // OK  no need to replace.
 module.exports.formatter        = formatter; // ok
 module.exports.sellShortCross   = sellShortCross; //OKto be tested change it to cross 3x
-module.exports.getCrossBtcDebt     = getCrossBtcDebt; //OK  
+//module.exports.getCrossBtcDebt     = getCrossBtcDebt; //OK  
 module.exports.stopBuy          = stopBuy; // OK 
 module.exports.cancelCrossOrders= cancelCrossOrders;// OK !.
 module.exports.crossBuy         = crossBuy;
