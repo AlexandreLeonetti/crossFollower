@@ -256,6 +256,15 @@ async function strat(stopLoss, limitLoss, logStream) {
 
 }
 
+async function mode(logStream){
+    /* if else short long */
+    const mode = 0//GETMODE(); // update maServer to update mas, a few seconds before signals.
+    if (mode === "LONG"){
+        /*  call strat */
+    } else {
+        /* call strat short */
+    }
+}
 
 cronExpression = "57 14,29,44,59 * * * *";
 //cronExpression = "30 */5 * * * *";
